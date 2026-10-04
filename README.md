@@ -78,7 +78,3 @@ Edita `front/js/data.js` para cambiar el inventario. Cada artículo requiere `nu
 ## Privacidad
 
 El navegador del cliente no es un entorno seguro. No almacenes datos sensibles ni información personal identificable (PII). El nombre del cliente es opcional; usa alias si es necesario.
-
-## Licencia
-
-MIT
