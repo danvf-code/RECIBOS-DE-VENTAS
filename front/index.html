@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Recibos de venta</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<header class="top">
+  <div><h1>Panadería Mercado</h1><p>Punto de venta · Caja 1</p></div>
+  <div class="clock" id="reloj"></div>
+</header>
+<main>
+  <section class="pos" aria-label="Panel de compra">
+    <label for="cliente">Cliente</label>
+    <input id="cliente" autocomplete="off" placeholder="Nombre del cliente (opcional)">
+    <div class="items" id="items"></div>
+    <div class="actions">
+      <button class="btn" id="borrarEntrada">Borrar entrada</button>
+      <button class="btn danger" id="cancelar">Cancelar todo</button>
+    </div>
+  </section>
+  <aside class="side">
+    <div class="ticket" aria-live="polite">
+      <h2 id="recTitulo">Recibo</h2>
+      <div class="lines" id="recibo"></div>
+      <div class="sum"><span>Total</span><strong id="total">S/ 0.00</strong></div>
+    </div>
+    <button class="btn primary big" id="finalizar">Finalizar compra</button>
+  </aside>
+</main>
+<footer class="bottom">
+  <button class="btn" id="diarias">Ventas diarias</button>
+  <button class="btn danger" id="borrarTodo">Borrar todo</button>
+</footer>
+<div class="toast" id="toast" role="status"></div>
+<script type="module" src="js/app.js"></script>
+</body>
+</html>

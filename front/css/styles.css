@@ -1,0 +1,43 @@
+:root{--bg:#e8eef0;--card:#fff;--ink:#14232b;--muted:#60737c;--line:#cfdadf;--accent:#0b7a75;--accent-ink:#fff;--amber:#f2a53a;--danger:#b23b2c;--paper:#fffdf6;--shadow:0 6px 18px rgba(20,35,43,.1)}
+@media (prefers-color-scheme:dark){:root{--bg:#0f171b;--card:#18242a;--ink:#e6eef0;--muted:#8fa4ad;--line:#2b3b43;--accent:#3cb8b4;--accent-ink:#06201f;--danger:#ef7d6c;--paper:#e9e4d3;--shadow:0 6px 18px rgba(0,0,0,.4)}}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;background:var(--bg);color:var(--ink);font:16px/1.4 "Bricolage Grotesque",system-ui,sans-serif;padding-bottom:84px}
+.top{display:flex;justify-content:space-between;align-items:center;max-width:1100px;margin:0 auto;padding:18px}
+.top h1{margin:0;font-size:1.7rem;font-weight:800;letter-spacing:-.02em}
+.top p{margin:0;color:var(--muted)}
+.clock{font:500 1rem "IBM Plex Mono",monospace;color:var(--muted)}
+main{max-width:1100px;margin:0 auto;padding:0 18px;display:grid;grid-template-columns:1fr 360px;gap:20px;align-items:start}
+.pos{background:var(--card);border-radius:14px;padding:18px;box-shadow:var(--shadow)}
+label{display:block;font-size:.85rem;color:var(--muted);margin-bottom:4px}
+input{width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);font:inherit;margin-bottom:14px}
+.items{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
+.item{position:relative;display:flex;flex-direction:column;gap:2px;padding:12px;text-align:left;background:var(--bg);border:2px solid transparent;border-radius:12px;color:var(--ink);font:inherit;cursor:pointer}
+.item:hover{border-color:var(--accent)}
+.item:active{transform:scale(.97)}
+.thumb{width:100%;aspect-ratio:16/10;display:grid;place-items:center;font-size:2.6rem;border-radius:8px;margin-bottom:6px}
+.item .n{font:500 .72rem "IBM Plex Mono",monospace;color:var(--muted)}
+.item .d{font-weight:700}
+.item .p{font:500 .95rem "IBM Plex Mono",monospace;color:var(--accent)}
+.badge{position:absolute;top:8px;right:8px;min-width:26px;height:26px;padding:0 7px;border-radius:13px;background:var(--accent);color:var(--accent-ink);font:500 .85rem/26px "IBM Plex Mono",monospace;text-align:center}
+.actions{display:flex;gap:10px;margin-top:16px;flex-wrap:wrap}
+.btn{padding:11px 16px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--ink);font:inherit;font-weight:700;cursor:pointer}
+.btn:hover{border-color:var(--ink)}
+.btn.danger{color:var(--danger);border-color:var(--danger)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.btn.big{width:100%;padding:16px;font-size:1.1rem;margin-top:14px}
+button:focus-visible,input:focus-visible{outline:3px solid var(--amber);outline-offset:2px}
+.side{position:sticky;top:12px}
+.ticket{background:var(--paper);color:#18222a;padding:20px 18px 34px;box-shadow:var(--shadow);font:400 .85rem/1.6 "IBM Plex Mono",monospace;-webkit-mask:conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) 50%/14px 100%;mask:conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) 50%/14px 100%}
+.ticket h2{margin:0 0 6px;text-align:center;font:800 1.1rem "Bricolage Grotesque",sans-serif}
+.lines{min-height:200px;max-height:380px;overflow-y:auto;border-top:1px dashed #8a9aa2;border-bottom:1px dashed #8a9aa2;padding:8px 0}
+.l{display:flex;justify-content:space-between;gap:8px}
+.l span:first-child{overflow-wrap:anywhere}
+.l.date{justify-content:center;color:#60737c;margin-bottom:4px}
+.empty{text-align:center;color:#60737c;margin-top:70px}
+.sum{display:flex;justify-content:space-between;align-items:baseline;margin-top:10px}
+.sum strong{font-size:1.7rem;font-weight:500}
+.bottom{position:fixed;left:0;right:0;bottom:0;display:flex;gap:10px;justify-content:center;padding:14px calc(14px + env(safe-area-inset-right,0px)) calc(14px + env(safe-area-inset-bottom,0px));background:var(--card);border-top:1px solid var(--line)}
+.toast{position:fixed;left:50%;bottom:96px;transform:translate(-50%,20px);opacity:0;pointer-events:none;background:var(--ink);color:var(--bg);padding:10px 18px;border-radius:8px;font-weight:700}
+.toast.show{opacity:1;transform:translate(-50%,0);transition:opacity .2s,transform .2s}
+@media (max-width:820px){main{grid-template-columns:1fr}.side{position:static}}
+@media (prefers-reduced-motion:reduce){.toast.show{transition:none}}
